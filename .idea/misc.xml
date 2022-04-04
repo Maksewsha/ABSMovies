@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/ic_baseline_arrow_downward_24.xml" value="0.2085" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/card_film.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_auth.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/fragment_fav_list.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/fragment_films_list.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/fragment_reg.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/fragment_start.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/layout.xml" value="0.29988861083984375" />
+        <entry key="app/src/main/res/layout/nav_view_layout.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/menu/app_menu.xml" value="0.4685929648241206" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
