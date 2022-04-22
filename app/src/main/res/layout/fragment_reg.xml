@@ -31,28 +31,37 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <EditText
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="79dp"
-            android:background="@color/white"
-            android:hint="E-mail"
-            android:paddingTop="3dp"
-            android:paddingBottom="3dp"
-            android:textSize="20dp" />
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="250dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/e_mail"
+                android:textSize="20sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="250dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:background="@color/white"
-            android:hint="Password"
-            android:paddingLeft="3dp"
             android:paddingTop="3dp"
-            android:paddingBottom="3dp"
-            android:textSize="20dp" />
+            android:paddingBottom="3dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:textSize="20sp"
+                android:hint="@string/password"
+                android:layout_height="match_parent"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="wrap_content"
