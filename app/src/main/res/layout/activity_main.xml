@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:openDrawer="start"
     android:fitsSystemWindows="true">
 
     <androidx.fragment.app.FragmentContainerView
@@ -20,8 +19,8 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         app:menu="@menu/app_menu"
-        android:background="@color/grey"
+        android:background="?colorPrimary"
         app:itemIconTint="@drawable/bottom_navigation_selector"
-        app:itemTextColor="@color/white"/>
+        app:itemTextColor="@drawable/bottom_navigation_selector"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

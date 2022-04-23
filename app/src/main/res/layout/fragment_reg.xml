@@ -2,24 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/middle"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="270dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_marginTop="95dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="96dp"
             android:gravity="center"
-            android:text="ABSMovies"
+            android:text="@string/app_name"
             android:textColor="@color/white"
-            android:textSize="48dp" />
+            android:textSize="@dimen/title" />
 
         <View
+            android:layout_marginTop="16dp"
             android:layout_width="300dp"
             android:layout_height="1dp"
             android:layout_gravity="center"
@@ -29,50 +31,48 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="36dp"
         android:orientation="vertical">
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:paddingTop="3dp"
-            android:paddingBottom="3dp">
+            style="@style/Theme.ABSMovies.TextInputLayout"
+            android:layout_gravity="center">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
+                android:id="@+id/email_edit_text"
                 android:layout_height="match_parent"
-                android:hint="@string/e_mail"
-                android:textSize="20sp" />
+                android:textSize="@dimen/large_text"
+                android:hint="@string/e_mail" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="250dp"
-            android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:paddingTop="3dp"
-            android:paddingBottom="3dp">
+            style="@style/Theme.ABSMovies.TextInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:textSize="20sp"
+                android:id="@+id/password_edit_text"
+                android:layout_height="match_parent"
                 android:hint="@string/password"
-                android:layout_height="match_parent"/>
+                android:textSize="@dimen/large_text" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="wrap_content"
+        <com.google.android.material.button.MaterialButton
+            style="@style/Theme.ABSMovies.MaterialButton"
+            android:id="@+id/btn_register"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="80dp"
-            android:background="@color/white"
-            android:paddingLeft="3dp"
-            android:paddingRight="3dp"
-            android:text="Зарегистрироваться" />
+            android:text="@string/register"
+            android:textSize="@dimen/large_text" />
 
     </LinearLayout>
+
 
 </LinearLayout>

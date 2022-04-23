@@ -6,4 +6,8 @@
     <string name="back_press">Press again to exit</string>
     <string name="e_mail">E-mail</string>
     <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="log_in">Log in</string>
+    <string name="stay_logged">Stay logged</string>
+    <string name="required_information">Please enter the required information</string>
 </resources>

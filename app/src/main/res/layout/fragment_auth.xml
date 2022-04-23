@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/middle"
     android:orientation="vertical">
 
     <LinearLayout
@@ -31,29 +32,31 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <EditText
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="70dp"
-            android:layout_marginBottom="30dp"
-            android:paddingTop="3dp"
-            android:paddingBottom="3dp"
-            android:paddingLeft="3dp"
-            android:background="@color/white"
-            android:hint="E-mail"
-            android:textSize="20dp" />
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Theme.ABSMovies.TextInputLayout"
+            android:layout_gravity="center">
 
-        <EditText
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/e_mail"
+                android:textSize="@dimen/large_text"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_gravity="center"
-            android:paddingTop="3dp"
-            android:paddingBottom="3dp"
-            android:paddingLeft="3dp"
-            android:background="@color/white"
-            android:hint="Password"
-            android:textSize="20dp" />
+            android:layout_marginTop="30dp"
+            style="@style/Theme.ABSMovies.TextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/password"
+                android:textSize="@dimen/large_text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -61,27 +64,30 @@
             android:layout_gravity="center"
             android:orientation="horizontal">
 
-            <CheckBox
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center" />
+<!--            <com.google.android.material.checkbox.MaterialCheckBox-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_gravity="center"-->
+<!--                app:buttonTint="@color/middle_dark"/>-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="Оставаться в аккаунте"
-                android:textColor="@color/white"
-                android:textSize="16dp" />
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:gravity="center"-->
+<!--                android:text="@string/stay_logged"-->
+<!--                android:textColor="@color/whiteDark"-->
+<!--                android:textSize="@dimen/middle_text" />-->
 
         </LinearLayout>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="150dp"
+        <com.google.android.material.button.MaterialButton
+            style="@style/Theme.ABSMovies.MaterialButton"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@color/white"
-            android:text="Войти" />
+            android:layout_marginTop="80dp"
+            android:text="@string/log_in"
+            android:textSize="@dimen/large_text" />
     </LinearLayout>
 
 </LinearLayout>

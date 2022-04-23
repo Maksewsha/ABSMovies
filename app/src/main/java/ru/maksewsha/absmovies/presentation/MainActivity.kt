@@ -12,6 +12,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import ru.maksewsha.absmovies.R
 import ru.maksewsha.absmovies.databinding.ActivityMainBinding
 import ru.maksewsha.absmovies.presentation.fragments.RegistrationFragment
+import ru.maksewsha.absmovies.presentation.fragments.StartFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,22 +42,7 @@ class MainActivity : AppCompatActivity() {
 
         bottomNav.visibility = View.INVISIBLE
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, RegistrationFragment(), "RegistrationFragment")
+            .replace(R.id.fragment_container, StartFragment(), "StartFragment")
             .commit()
-    }
-
-    override fun onBackPressed() {
-        Log.d("Activity", getFragment().id.toString())
-        when (getFragment().tag) {
-            "RegistrationFragment" -> {
-                backCount++
-                Toast.makeText(this, R.string.back_press, Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
-
-    private fun getFragment(): Fragment {
-        val stackCount = supportFragmentManager.backStackEntryCount
-        return supportFragmentManager.fragments[if (stackCount > 0) stackCount - 1 else stackCount]
     }
 }
