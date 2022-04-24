@@ -6,11 +6,13 @@
         <entry key="app/src/main/res/drawable/bottom_navigation_selector.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/ic_baseline_arrow_downward_24.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.1235" />
+        <entry key="app/src/main/res/drawable/ic_baseline_movie_24.xml" value="0.2585" />
         <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1235" />
         <entry key="app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.1235" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.207" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.309942626953125" />
         <entry key="app/src/main/res/layout/card_film.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_auth.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/fragment_auth.xml" value="0.2706119948487327" />
         <entry key="app/src/main/res/layout/fragment_fav_list.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/layout/fragment_films_list.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/layout/fragment_reg.xml" value="0.19628286491387126" />

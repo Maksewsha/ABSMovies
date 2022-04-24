@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/app_menu_btn_search"
         android:icon="@drawable/ic_baseline_search_24"
@@ -8,9 +7,9 @@
     <item
         android:id="@+id/app_menu_btn_favorite"
         android:icon="@drawable/ic_baseline_favorite_24"
-        android:title="@string/favourites"/>
+        android:title="@string/favourites" />
     <item
         android:id="@+id/app_menu_btn_settings"
         android:icon="@drawable/ic_baseline_settings_24"
-        android:title="@string/settings"/>
+        android:title="@string/settings" />
 </menu>

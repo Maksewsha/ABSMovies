@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/middle"
@@ -7,23 +8,22 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="270dp"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="96dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="95dp"
             android:gravity="center"
-            android:text="@string/app_name"
+            android:text="ABSMovies"
             android:textColor="@color/white"
             android:textSize="@dimen/title" />
 
         <View
-            android:layout_width="300dp"
+            android:layout_width="350dp"
             android:layout_height="1dp"
             android:layout_gravity="center"
-            android:layout_marginTop="16dp"
             android:background="@color/white" />
     </LinearLayout>
 
@@ -38,9 +38,11 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="80dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
             android:text="@string/register"
-            android:textSize="@dimen/large_text" />
+            android:textSize="@dimen/large_text"
+            app:cornerRadius="15dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_login"
@@ -48,9 +50,19 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
             android:text="@string/log_in"
-            android:textSize="@dimen/large_text" />
+            android:textSize="@dimen/large_text"
+            app:cornerRadius="15dp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/ochki" />
     </LinearLayout>
 
 </LinearLayout>
