@@ -3,6 +3,7 @@
     <color name="middle">#6c80b7</color>
     <color name="middle_light">#9dafe9</color>
     <color name="middle_dark">#3d5487</color>
+    <color name="middle_black">#263045</color>
     <color name="middle_white">#C6D2EE</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>

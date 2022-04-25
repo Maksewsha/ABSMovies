@@ -11,6 +11,8 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Customize your theme here. -->
         <item name="android:statusBarColor">@color/black</item>
+        <item name="fontFamily">@font/montserratmedium</item>
+        <item name="bottomNavigationStyle">@font/montserratmedium</item>
     </style>
 
     <style name="Theme.ABSMovies.MaterialButton" parent="Widget.MaterialComponents.Button">
