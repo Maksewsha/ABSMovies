@@ -21,12 +21,12 @@
     </style>
 
     <style name="Theme.ABSMovies.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
-        <item name="android:paddingTop">3dp</item>
-        <item name="android:paddingBottom">3dp</item>
-        <item name="boxCornerRadiusTopEnd">15dp</item>
-        <item name="boxCornerRadiusBottomEnd">15dp</item>
-        <item name="boxCornerRadiusBottomStart">15dp</item>
-        <item name="boxCornerRadiusTopStart">15dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="boxCornerRadiusTopEnd">16dp</item>
+        <item name="boxCornerRadiusBottomEnd">16dp</item>
+        <item name="boxCornerRadiusBottomStart">16dp</item>
+        <item name="boxCornerRadiusTopStart">16dp</item>
         <item name="android:layout_width">350dp</item>
         <item name="android:layout_height">wrap_content</item>
     </style>

@@ -10,4 +10,7 @@
     <color name="whiteDark">#A8FFFFFF</color>
     <color name="grey">#4E4B4B</color>
     <color name="transparent">#004E4B4B</color>
+    <color name="rating_green">#579B2C</color>
+    <color name="rating_yellow">#FFE461</color>
+    <color name="rating_red">#CA3939</color>
 </resources>
