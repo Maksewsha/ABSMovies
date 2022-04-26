@@ -4,19 +4,19 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/bottom_navigation_selector.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/corner_shape.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_arrow_downward_24.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.1235" />
-        <entry key="app/src/main/res/drawable/ic_baseline_movie_24.xml" value="0.2585" />
         <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1235" />
+        <entry key="app/src/main/res/drawable/ic_baseline_search_films.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.1235" />
-        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.207" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.38739880204576005" />
-        <entry key="app/src/main/res/layout/card_film.xml" value="0.4776839565741858" />
-        <entry key="app/src/main/res/layout/fragment_auth.xml" value="0.41802215576171875" />
-        <entry key="app/src/main/res/layout/fragment_fav_list.xml" value="0.4691176427459025" />
-        <entry key="app/src/main/res/layout/fragment_film_full.xml" value="0.32751216375794645" />
-        <entry key="app/src/main/res/layout/fragment_films_list.xml" value="0.19628286491387126" />
-        <entry key="app/src/main/res/layout/fragment_reg.xml" value="0.3640288365935588" />
+        <entry key="app/src/main/res/drawable/search_button_shape.xml" value="0.2085" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/card_film.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_auth.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/fragment_fav_list.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/fragment_films_list.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_reg.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/layout/fragment_start.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/layout/layout.xml" value="0.29988861083984375" />
         <entry key="app/src/main/res/layout/nav_view_layout.xml" value="0.19628286491387126" />

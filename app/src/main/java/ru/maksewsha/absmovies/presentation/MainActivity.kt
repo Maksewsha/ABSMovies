@@ -4,14 +4,18 @@ import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import ru.maksewsha.absmovies.R
 import ru.maksewsha.absmovies.databinding.ActivityMainBinding
 import ru.maksewsha.absmovies.presentation.fragments.RegistrationFragment
+import ru.maksewsha.absmovies.presentation.fragments.SearchFragment
 import ru.maksewsha.absmovies.presentation.fragments.StartFragment
 
 class MainActivity : AppCompatActivity() {
@@ -40,9 +44,9 @@ class MainActivity : AppCompatActivity() {
 //            }
 //        }
 
-        bottomNav.visibility = View.INVISIBLE
+        //bottomNav.visibility = View.INVISIBLE
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, StartFragment(), "StartFragment")
+            .replace(R.id.fragment_container, SearchFragment(), "SearchFragment")
             .commit()
     }
 }

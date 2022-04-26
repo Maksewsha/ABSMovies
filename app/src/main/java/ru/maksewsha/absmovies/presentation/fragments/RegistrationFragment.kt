@@ -38,7 +38,7 @@ class RegistrationFragment: Fragment(R.layout.fragment_reg) {
         viewModel = ViewModelProvider(this).get(RegistrationViewModel::class.java)
         btnReg = binding.btnRegister
         editEmail = binding.emailEditText
-        editPass = binding.passwordEditText
+        editPass = binding.passEditText
 
         btnReg.setOnClickListener {
             if (!checkValid(editEmail, editPass)) Snackbar.make(binding.root, R.string.required_information, Snackbar.LENGTH_SHORT).show()
