@@ -1,5 +1,6 @@
 package ru.maksewsha.absmovies.domain.repos
 
 interface FilmsRepository {
-    fun getByKeyWord(keyWord: String)
+    fun getByFilters(keyWord: String)
+    fun getByKinopoiskId(id: Int)
 }

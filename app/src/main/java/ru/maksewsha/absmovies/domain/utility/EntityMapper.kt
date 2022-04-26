@@ -6,6 +6,6 @@ package ru.maksewsha.absmovies.domain.utility
 //Generic of object is F
 
 interface EntityMapper<T, F> {
-    fun mapFromEntity(entity: T): F
-    fun mapToEntity(objectToMap: F): T
+    fun mapFromEntity(entity: F): T
+    fun mapToEntity(objectToMap: T): F
 }
