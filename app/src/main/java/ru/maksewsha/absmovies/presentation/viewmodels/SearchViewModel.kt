@@ -1,12 +1,10 @@
 package ru.maksewsha.absmovies.presentation.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import ru.maksewsha.absmovies.domain.usecases.GetByKeyWordCase
 import ru.maksewsha.absmovies.presentation.mapper.FilterFilmUIMapper
 import ru.maksewsha.absmovies.presentation.models.FilmUIFilters
@@ -24,9 +22,14 @@ class SearchViewModel(private val getByKeyWordCase: GetByKeyWordCase) : ViewMode
     private val filterFilmUIMapper = FilterFilmUIMapper()
 
     fun getFilmsByFilter(keyWord: String) {
-        job = CoroutineScope(Dispatchers.IO).launch {
+        val scope = CoroutineScope(Job() + Dispatchers.IO)
+        scope.launch {
             val response =
-                filterFilmUIMapper.mapToEntity(getByKeyWordCase.getByKeyWordCase(keyWord))
+                filterFilmUIMapper.mapToEntity(
+                    getByKeyWordCase.getByKeyWordCase(
+                        keyWord
+                    )
+                )
             when (response) {
                 is FilmUIFilters.Success -> {
                     _filmsFilters.postValue(response.data)
@@ -36,10 +39,5 @@ class SearchViewModel(private val getByKeyWordCase: GetByKeyWordCase) : ViewMode
                 }
             }
         }
-    }
-
-    override fun onCleared() {
-        super.onCleared()
-        job?.cancel()
     }
 }

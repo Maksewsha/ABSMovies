@@ -59,7 +59,7 @@ class SearchFragment: Fragment(R.layout.fragment_films_search) {
 
         viewModel.filmsFilters.observe(viewLifecycleOwner, object: Observer<List<FilmUIFiltersFull>>{
             override fun onChanged(t: List<FilmUIFiltersFull>?) {
-                Log.d("TAG", t!!.get(0).nameRu)
+                Log.d("TAG", t!!.get(0).nameRu!!)
             }
 
         })
