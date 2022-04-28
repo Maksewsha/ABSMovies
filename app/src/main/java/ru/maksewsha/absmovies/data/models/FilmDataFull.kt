@@ -71,11 +71,3 @@ data class FilmDataFull(
     val has3D: Boolean,
     val lastSync: String
 )
-
-data class Country(
-    val country: String
-)
-
-data class Genre(
-    val genre: String
-)

@@ -1,8 +1,6 @@
 package ru.maksewsha.absmovies.data.models
 
-import com.google.gson.annotations.SerializedName
-
-data class FilmDataFilters(
-    @SerializedName("kinopoiskId")
-    val kinopoiskId: Int
-)
+sealed class FilmDataFilters {
+    class Success(val data: List<FilmDataFiltersFull>): FilmDataFilters()
+    class Fail(val errorMessage: String): FilmDataFilters()
+}

@@ -47,8 +47,8 @@ data class FilmDomainFull(
     val ratingMPAA: String,
 
     val ratingAgeLimits: String,
-    val countries: List<Country>,
-    val genres: List<Genre>,
+    val countryDomains: List<CountryDomain>,
+    val genreDomains: List<GenreDomain>,
     val startYear: Any? = null,
     val endYear: Any? = null,
     val serial: Boolean,
@@ -57,12 +57,4 @@ data class FilmDomainFull(
     val hasImax: Boolean,
     val has3D: Boolean,
     val lastSync: String
-)
-
-data class Country(
-    val country: String
-)
-
-data class Genre(
-    val genre: String
 )
