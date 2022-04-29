@@ -11,10 +11,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import ru.maksewsha.absmovies.R
 import ru.maksewsha.absmovies.databinding.FragmentFilmsSearchBinding
 import ru.maksewsha.absmovies.presentation.models.FilmUIFiltersFull
+import ru.maksewsha.absmovies.presentation.viewitems.FilmSearchRecycler
 import ru.maksewsha.absmovies.presentation.viewmodels.SearchViewModel
 
 class SearchFragment: Fragment(R.layout.fragment_films_search) {
@@ -25,6 +28,7 @@ class SearchFragment: Fragment(R.layout.fragment_films_search) {
 
     private lateinit var keyWordEditText: EditText
     private lateinit var searchButton: ImageButton
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,6 +49,9 @@ class SearchFragment: Fragment(R.layout.fragment_films_search) {
         keyWordEditText = binding.keyWordEditText
         searchButton = binding.searchButton
 
+        recyclerView = binding.recyclerView
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
         searchButton.setOnClickListener {
             viewModel.getFilmsByFilter(keyWordEditText.text.toString())
             Log.d("TAG", "Button clicked")
@@ -59,7 +66,7 @@ class SearchFragment: Fragment(R.layout.fragment_films_search) {
 
         viewModel.filmsFilters.observe(viewLifecycleOwner, object: Observer<List<FilmUIFiltersFull>>{
             override fun onChanged(t: List<FilmUIFiltersFull>?) {
-                Log.d("TAG", t!!.get(0).nameRu!!)
+                recyclerView.adapter = FilmSearchRecycler(t!!)
             }
 
         })

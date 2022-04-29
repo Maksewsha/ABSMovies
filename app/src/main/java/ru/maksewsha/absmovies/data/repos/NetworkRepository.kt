@@ -17,21 +17,11 @@ class NetworkRepository constructor(private val retrofitService: RetrofitService
     private val filterMapper = FilterFilmDataMapper()
     override suspend fun getByFilters(keyWord: String): FilmDomainFilters {
         val response = retrofitService.getByKeyWord(keyWord)
-        val result = response.enqueue(object: Callback<FilmList>{
-            override fun onResponse(call: Call<FilmList>, response: Response<FilmList>) {
-                Log.d("TAG", response.body()!!.items.toString())
-            }
-
-            override fun onFailure(call: Call<FilmList>, t: Throwable) {
-                Log.d("TAG", t.message.toString())
-            }
-
-        })
-        val abr = response.execute()
-        return if (abr.isSuccessful){
-            filterMapper.mapFromEntity(FilmDataFilters.Success((abr.body() as FilmList).items as List<FilmDataFiltersFull>))
+        val result = response.execute()
+        return if (result.isSuccessful){
+            filterMapper.mapFromEntity(FilmDataFilters.Success((result.body() as FilmList).items as List<FilmDataFiltersFull>))
         } else {
-            filterMapper.mapFromEntity(FilmDataFilters.Fail(abr.message()))
+            filterMapper.mapFromEntity(FilmDataFilters.Fail(result.message()))
         }
     }
 

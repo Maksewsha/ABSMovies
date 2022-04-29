@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/middle_white">
 
 
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/text1"
+            android:id="@+id/card_list_title"
             android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:shadowColor="@color/black"
@@ -31,7 +31,7 @@
             tools:text="Название фильма на русском" />
 
         <TextView
-            android:id="@+id/text2"
+            android:id="@+id/card_list_english_year_mins"
             android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -42,11 +42,11 @@
             android:textColor="@color/black"
             android:textSize="14dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text1"
+            app:layout_constraintTop_toBottomOf="@+id/card_list_title"
             tools:text="Название фильма на английском, год, количество минут " />
 
         <TextView
-            android:id="@+id/text3"
+            android:id="@+id/card_list_country_genre"
             android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -56,11 +56,11 @@
             android:shadowRadius="1"
             android:textColor="@color/grey"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text2"
+            app:layout_constraintTop_toBottomOf="@+id/card_list_english_year_mins"
             tools:text="Страна, жанр" />
 
         <TextView
-            android:id="@+id/text4"
+            android:id="@+id/card_list_rating"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -70,8 +70,8 @@
             android:shadowDy="1"
             android:shadowRadius="1"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/text3"
-            app:layout_constraintTop_toBottomOf="@+id/text2"
+            app:layout_constraintStart_toEndOf="@+id/card_list_country_genre"
+            app:layout_constraintTop_toBottomOf="@+id/card_list_english_year_mins"
             tools:text="Rate"
             tools:textColor="@color/rating_yellow" />
 
@@ -79,7 +79,7 @@
 
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/card_list_image"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginLeft="10dp"
