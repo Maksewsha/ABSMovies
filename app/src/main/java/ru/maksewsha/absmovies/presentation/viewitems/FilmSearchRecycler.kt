@@ -12,7 +12,7 @@ class FilmSearchRecycler(private val films: List<FilmUIFiltersFull>):
     RecyclerView.Adapter<FilmSearchRecycler.FilmSearchViewHolder>() {
 
     class FilmSearchViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val title: TextView = itemView.findViewById(R.id.card_list_title)
+        val title: TextView = itemView.findViewById(R.id.card_list_rutitle_entitle)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilmSearchViewHolder {
