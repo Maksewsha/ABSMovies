@@ -10,16 +10,18 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import ru.maksewsha.absmovies.R
 import ru.maksewsha.absmovies.presentation.fragments.FilmFullFragment
+import ru.maksewsha.absmovies.presentation.fragments.SearchFragment
 import ru.maksewsha.absmovies.presentation.models.FilmUIFiltersFull
 import ru.maksewsha.absmovies.presentation.utils.getStringList
+import ru.maksewsha.absmovies.presentation.viewmodels.SearchViewModel
 
 class FilmSearchRecycler(private val films: List<FilmUIFiltersFull>) :
     RecyclerView.Adapter<FilmSearchRecycler.FilmSearchViewHolder>() {
-
     class FilmSearchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.card_list_entitle_rutitle)
         val image: ImageView = itemView.findViewById(R.id.card_list_image)
@@ -32,10 +34,14 @@ class FilmSearchRecycler(private val films: List<FilmUIFiltersFull>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilmSearchViewHolder {
         val itemView =
             LayoutInflater.from(parent.context).inflate(R.layout.card_film, parent, false)
+
         return FilmSearchViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: FilmSearchViewHolder, position: Int) {
+
+        val viewModel = ViewModelProvider((holder.itemView.context as Fragment)).get(SearchViewModel::class.java)
+
         holder.title.text = if (films.get(position).nameRu != null) {
             "${films.get(position).nameOriginal} - ${films.get(position).nameRu}"
         } else {
@@ -45,7 +51,7 @@ class FilmSearchRecycler(private val films: List<FilmUIFiltersFull>) :
         holder.rating.text = films.get(position).ratingImdb.toString()
 
         holder.countryYear.text =
-            "${getStringList(films.get(0).countryDomains)}, ${films.get(position).year}"
+            "${getStringList(films.get(position).countryDomains)}, ${films.get(position).year}"
 
         holder.genreType.text =
             "${getStringList(films.get(position).genreDomains)}, ${films.get(position).type?.lowercase()}"
@@ -55,8 +61,8 @@ class FilmSearchRecycler(private val films: List<FilmUIFiltersFull>) :
             .centerCrop()
             .into(holder.image)
 
-        holder.cardItem.setOnClickListener {
-            (holder.itemView.parent as Fragment).parentFragmentManager.beginTransaction().replace(R.id.fragment_container, FilmFullFragment(), //TODO,"FilmFullFragment")
+        holder.cardItem.setOnClickListener{
+            //TODO (holder.itemView.context as SearchFragment).parentFragmentManager.beginTransaction().replace(R.id.fragment_container, FilmFullFragment(), Bundle().putSerializable("film", viewModel.getFullFilm(films.get(position))))
         }
     }
 

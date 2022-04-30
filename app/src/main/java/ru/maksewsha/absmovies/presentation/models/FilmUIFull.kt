@@ -1,8 +1,10 @@
 package ru.maksewsha.absmovies.presentation.models
 
+import kotlinx.android.parcel.Parcelize
 import ru.maksewsha.absmovies.domain.models.CountryDomain
 import ru.maksewsha.absmovies.domain.models.GenreDomain
 
+@Parcelize
 data class FilmUIFull(
     val kinopoiskID: Long,
     val imdbID: String,

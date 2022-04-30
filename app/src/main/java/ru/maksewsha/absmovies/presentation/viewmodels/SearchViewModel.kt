@@ -22,7 +22,7 @@ class SearchViewModel(private val getByKeyWordCase: GetByKeyWordCase) : ViewMode
     private val filterFilmUIMapper = FilterFilmUIMapper()
 
     fun getFilmsByFilter(keyWord: String) {
-        val scope = CoroutineScope(Job() + Dispatchers.IO)
+        val scope = CoroutineScope(Dispatchers.IO)
         scope.launch {
             val response =
                 filterFilmUIMapper.mapToEntity(
@@ -38,6 +38,13 @@ class SearchViewModel(private val getByKeyWordCase: GetByKeyWordCase) : ViewMode
                     _errorMessage.postValue(response.errorMessage)
                 }
             }
+        }
+    }
+
+    fun getFullFilm(id: Int){
+        val scope = CoroutineScope(Dispatchers.IO)
+        scope.launch {
+            //TODO
         }
     }
 }
