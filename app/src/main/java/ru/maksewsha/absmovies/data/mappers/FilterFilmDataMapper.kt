@@ -1,5 +1,6 @@
 package ru.maksewsha.absmovies.data.mappers
 
+import android.util.Log
 import ru.maksewsha.absmovies.data.models.FilmDataFilters
 import ru.maksewsha.absmovies.domain.models.CountryDomain
 import ru.maksewsha.absmovies.domain.models.FilmDomainFilters
@@ -17,10 +18,10 @@ class FilterFilmDataMapper: EntityMapper<FilmDomainFilters, FilmDataFilters> {
                     ent.nameRu,
                     ent.nameEn,
                     ent.nameOriginal,
-                    ent.countries?.map {
+                    ent.countries.map {
                         CountryDomain(it.country)
                     },
-                    ent.genres?.map{
+                    ent.genres.map{
                         GenreDomain(it.genre)
                     },
                     ent.ratingKinopoisk,

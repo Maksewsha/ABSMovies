@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
+
 android {
     compileSdk 31
 
@@ -32,6 +33,14 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    apply plugin: 'org.jetbrains.kotlin.android.extensions'
+
+    android {
+        androidExtensions {
+            experimental = true
+        }
     }
 }
 

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageButton
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
@@ -29,6 +30,7 @@ class SearchFragment: Fragment(R.layout.fragment_films_search) {
     private lateinit var keyWordEditText: EditText
     private lateinit var searchButton: ImageButton
     private lateinit var recyclerView: RecyclerView
+    private lateinit var cardItem: CardView
 
     override fun onCreateView(
         inflater: LayoutInflater,
