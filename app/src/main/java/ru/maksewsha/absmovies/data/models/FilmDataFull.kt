@@ -10,7 +10,7 @@ data class FilmDataFull(
     val imdbID: String,
 
     val nameRu: String,
-    val nameEn: Any? = null,
+    val nameEn: String? = null,
     val nameOriginal: String,
 
     @SerializedName("posterUrl")
@@ -34,7 +34,7 @@ data class FilmDataFull(
     val ratingImdbVoteCount: Long,
     val ratingFilmCritics: Double,
     val ratingFilmCriticsVoteCount: Long,
-    val ratingAwait: Any? = null,
+    val ratingAwait: Double? = null,
     val ratingAwaitCount: Long,
 
     @SerializedName("ratingRfCritics")
@@ -51,9 +51,9 @@ data class FilmDataFull(
     val slogan: String,
     val description: String,
     val shortDescription: String,
-    val editorAnnotation: Any? = null,
+    val editorAnnotation: String? = null,
     val isTicketsAvailable: Boolean,
-    val productionStatus: Any? = null,
+    val productionStatus: String? = null,
     val type: String,
 
     @SerializedName("ratingMpaa")
@@ -62,8 +62,8 @@ data class FilmDataFull(
     val ratingAgeLimits: String,
     val countries: List<Country>,
     val genres: List<Genre>,
-    val startYear: Any? = null,
-    val endYear: Any? = null,
+    val startYear: Int? = null,
+    val endYear: Int? = null,
     val serial: Boolean,
     val shortFilm: Boolean,
     val completed: Boolean,

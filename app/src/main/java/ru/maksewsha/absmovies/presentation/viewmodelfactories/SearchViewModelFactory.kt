@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import ru.maksewsha.absmovies.data.network.RetrofitService
 import ru.maksewsha.absmovies.data.repos.NetworkRepository
 import ru.maksewsha.absmovies.domain.usecases.GetByKeyWordCase
+import ru.maksewsha.absmovies.domain.usecases.GetByKinopoiskIDCase
 import ru.maksewsha.absmovies.presentation.viewmodels.SearchViewModel
 
 class SearchViewModelFactory: ViewModelProvider.Factory {
@@ -21,8 +22,12 @@ class SearchViewModelFactory: ViewModelProvider.Factory {
         GetByKeyWordCase(networkRepository)
     }
 
+    private val getByKinopoiskIDCase by lazy(LazyThreadSafetyMode.NONE) {
+        GetByKinopoiskIDCase(networkRepository)
+    }
+
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return SearchViewModel(getByKeyWordCase) as T
+        return SearchViewModel(getByKeyWordCase, getByKinopoiskIDCase) as T
     }
 }

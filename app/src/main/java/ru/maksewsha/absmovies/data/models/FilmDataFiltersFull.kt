@@ -4,14 +4,14 @@ import com.google.gson.annotations.SerializedName
 
 data class FilmDataFiltersFull (
     @SerializedName("kinopoiskId")
-    val kinopoiskID: Long?,
+    val kinopoiskID: Long,
 
     @SerializedName("imdbId")
     val imdbID: String?,
     @SerializedName("nameRu")
     val nameRu: String?,
     @SerializedName("nameEn")
-    val nameEn: Any? = null,
+    val nameEn: String? = null,
     @SerializedName("nameOriginal")
     val nameOriginal: String?,
     @SerializedName("countries")

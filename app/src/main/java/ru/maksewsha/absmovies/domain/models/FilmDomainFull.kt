@@ -5,7 +5,7 @@ data class FilmDomainFull(
     val imdbID: String,
 
     val nameRu: String,
-    val nameEn: Any? = null,
+    val nameEn: String? = null,
     val nameOriginal: String,
 
     val posterURL: String,
@@ -25,7 +25,7 @@ data class FilmDomainFull(
     val ratingImdbVoteCount: Long,
     val ratingFilmCritics: Double,
     val ratingFilmCriticsVoteCount: Long,
-    val ratingAwait: Any? = null,
+    val ratingAwait: Double? = null,
     val ratingAwaitCount: Long,
 
     val ratingRFCritics: Long,
@@ -39,9 +39,9 @@ data class FilmDomainFull(
     val slogan: String,
     val description: String,
     val shortDescription: String,
-    val editorAnnotation: Any? = null,
+    val editorAnnotation: String? = null,
     val isTicketsAvailable: Boolean,
-    val productionStatus: Any? = null,
+    val productionStatus: String? = null,
     val type: String,
 
     val ratingMPAA: String,
@@ -49,8 +49,8 @@ data class FilmDomainFull(
     val ratingAgeLimits: String,
     val countryDomains: List<CountryDomain>,
     val genreDomains: List<GenreDomain>,
-    val startYear: Any? = null,
-    val endYear: Any? = null,
+    val startYear: Int? = null,
+    val endYear: Int? = null,
     val serial: Boolean,
     val shortFilm: Boolean,
     val completed: Boolean,

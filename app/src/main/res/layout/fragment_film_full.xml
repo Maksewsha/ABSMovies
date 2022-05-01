@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/text1"
+            android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:shadowColor="@color/black"
@@ -50,7 +50,7 @@
             android:textColor="@color/grey"
             android:textSize="12dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text1"
+            app:layout_constraintTop_toBottomOf="@+id/title"
             tools:text="Название фильма на английском" />
 
         <TextView

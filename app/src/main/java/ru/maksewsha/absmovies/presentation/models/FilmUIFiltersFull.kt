@@ -1,7 +1,7 @@
 package ru.maksewsha.absmovies.presentation.models
 
 data class FilmUIFiltersFull(
-    val kinopoiskID: Long?,
+    val kinopoiskID: Long,
 
     val imdbID: String?,
 

@@ -5,5 +5,5 @@ import ru.maksewsha.absmovies.domain.models.FilmDomainFilters
 
 interface FilmsRepository {
     suspend fun getByFilters(keyWord: String): FilmDomainFilters
-    suspend fun getByKinopoiskID(id: Int): FilmDomain
+    suspend fun getByKinopoiskID(id: Long): FilmDomain
 }

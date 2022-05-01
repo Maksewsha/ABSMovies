@@ -25,7 +25,7 @@ class NetworkRepository constructor(private val retrofitService: RetrofitService
         }
     }
 
-    override suspend fun getByKinopoiskID(id: Int): FilmDomain {
+    override suspend fun getByKinopoiskID(id: Long): FilmDomain {
         val response = retrofitService.getByKinopoiskId(id)
         val result = response.execute()
         return if (result.isSuccessful){

@@ -30,7 +30,6 @@ class SearchFragment: Fragment(R.layout.fragment_films_search) {
     private lateinit var keyWordEditText: EditText
     private lateinit var searchButton: ImageButton
     private lateinit var recyclerView: RecyclerView
-    private lateinit var cardItem: CardView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -56,13 +55,11 @@ class SearchFragment: Fragment(R.layout.fragment_films_search) {
 
         searchButton.setOnClickListener {
             viewModel.getFilmsByFilter(keyWordEditText.text.toString())
-            Log.d("TAG", "Button clicked")
         }
 
         viewModel.errorMessage.observe(viewLifecycleOwner, object: Observer<String>{
             override fun onChanged(t: String?) {
                 Snackbar.make(view, "$t", Snackbar.LENGTH_SHORT).show()
-                Log.d("TAG", t.toString())
             }
         })
 

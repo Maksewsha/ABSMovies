@@ -21,10 +21,10 @@ class FilterFilmUIMapper: EntityMapper<FilmDomainFilters, FilmUIFilters> {
                     ent.nameRu,
                     ent.nameEn,
                     ent.nameOriginal,
-                    ent.countryDomains?.map {
+                    ent.countryDomains.map {
                         CountryUI(it.country)
                     },
-                    ent.genreDomains?.map{
+                    ent.genreDomains.map{
                         GenreUI(it.genre)
                     },
                     ent.ratingKinopoisk,

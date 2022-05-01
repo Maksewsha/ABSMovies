@@ -2,7 +2,7 @@ package ru.maksewsha.absmovies.domain.models
 
 
 data class FilmDomainFiltersFull (
-    val kinopoiskID: Long?,
+    val kinopoiskID: Long,
 
     val imdbID: String?,
 

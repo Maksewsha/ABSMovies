@@ -1,5 +1,6 @@
 package ru.maksewsha.absmovies.presentation.viewitems
 
+import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
@@ -40,7 +42,8 @@ class FilmSearchRecycler(private val films: List<FilmUIFiltersFull>) :
 
     override fun onBindViewHolder(holder: FilmSearchViewHolder, position: Int) {
 
-        val viewModel = ViewModelProvider((holder.itemView.context as Fragment)).get(SearchViewModel::class.java)
+        val viewModel =
+            ViewModelProvider((holder.itemView.context as AppCompatActivity)).get(SearchViewModel::class.java)
 
         holder.title.text = if (films.get(position).nameRu != null) {
             "${films.get(position).nameOriginal} - ${films.get(position).nameRu}"
@@ -61,8 +64,13 @@ class FilmSearchRecycler(private val films: List<FilmUIFiltersFull>) :
             .centerCrop()
             .into(holder.image)
 
-        holder.cardItem.setOnClickListener{
-            //TODO (holder.itemView.context as SearchFragment).parentFragmentManager.beginTransaction().replace(R.id.fragment_container, FilmFullFragment(), Bundle().putSerializable("film", viewModel.getFullFilm(films.get(position))))
+        holder.cardItem.setOnClickListener {
+            val fragmentToShow = FilmFullFragment()
+            val bundle = Bundle()
+            bundle.putLong("filmId", films.get(position).kinopoiskID)
+            fragmentToShow.arguments = bundle
+            (holder.itemView.context as AppCompatActivity).supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragmentToShow,    "FilmFullFragment").commit()
         }
     }
 

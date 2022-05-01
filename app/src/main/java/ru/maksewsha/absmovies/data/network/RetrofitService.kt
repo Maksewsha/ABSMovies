@@ -20,8 +20,8 @@ interface RetrofitService {
     fun getByKeyWord(@Query("keyword")keyWord: String): Call<FilmList>
 
     @Headers("X-API-KEY: fe339ab6-febc-4651-af83-04548c6e79b8", "accept: application/json", "Accept: application/json")
-    @GET("/v2.2/films/{id}")
-    fun getByKinopoiskId(@Path("id") id: Int): Call<FilmDataFull>
+    @GET("{id}")
+    fun getByKinopoiskId(@Path("id") id: Long): Call<FilmDataFull>
 
     companion object{
 
