@@ -15,9 +15,9 @@ data class FilmDataFiltersFull (
     @SerializedName("nameOriginal")
     val nameOriginal: String?,
     @SerializedName("countries")
-    val countries: List<Country>,
+    val countries: List<Country>?,
     @SerializedName("genres")
-    val genres: List<Genre>,
+    val genres: List<Genre>?,
     @SerializedName("ratingKinopoisk")
     val ratingKinopoisk: Double?,
     @SerializedName("ratingImdb")

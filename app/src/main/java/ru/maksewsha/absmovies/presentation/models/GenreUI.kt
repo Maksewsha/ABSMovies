@@ -5,9 +5,9 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class GenreUI(
-    val genre: String
+    val genre: String?
 ): Parcelable{
     override fun toString(): String {
-        return genre
+        return genre ?: ""
     }
 }

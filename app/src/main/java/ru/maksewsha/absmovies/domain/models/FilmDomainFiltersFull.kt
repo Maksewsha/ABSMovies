@@ -7,10 +7,10 @@ data class FilmDomainFiltersFull (
     val imdbID: String?,
 
     val nameRu: String?,
-    val nameEn: Any? = null,
+    val nameEn: String?,
     val nameOriginal: String?,
-    val countryDomains: List<CountryDomain>,
-    val genreDomains: List<GenreDomain>,
+    val countryDomains: List<CountryDomain>?,
+    val genreDomains: List<GenreDomain>?,
     val ratingKinopoisk: Double?,
     val ratingImdb: Double?,
     val year: Long?,

@@ -4,9 +4,9 @@ import com.google.gson.annotations.SerializedName
 
 data class FilmList(
     @SerializedName("total")
-    val total: Int,
+    val total: Int?,
     @SerializedName("totalPages")
-    val totalPages: Int,
+    val totalPages: Int?,
     @SerializedName("items")
     val items: List<FilmDataFiltersFull>?
 )

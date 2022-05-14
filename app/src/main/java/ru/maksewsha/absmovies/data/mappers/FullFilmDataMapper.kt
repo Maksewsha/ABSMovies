@@ -41,11 +41,11 @@ class FullFilmDataMapper : EntityMapper<FilmDomain, FilmData> {
                     entity.data.productionStatus,
                     entity.data.type,
                     entity.data.ratingMPAA,
-                    entity.data.ratingAgeLimits,
-                    entity.data.countries.map {
+                    entity.data?.ratingAgeLimits,
+                    entity.data.countries?.map {
                                       CountryDomain(it.country)
                     },
-                    entity.data.genres.map {
+                    entity.data.genres?.map {
                                    GenreDomain(it.genre)
                     },
                     entity.data.startYear,

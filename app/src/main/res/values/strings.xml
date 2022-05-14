@@ -11,4 +11,5 @@
     <string name="stay_logged">Stay logged</string>
     <string name="required_information">Please enter the required information</string>
     <string name="key_words">Key words</string>
+    <string name="rating_null">Нет рейтинга</string>
 </resources>

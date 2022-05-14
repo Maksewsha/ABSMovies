@@ -6,10 +6,10 @@ data class FilmUIFiltersFull(
     val imdbID: String?,
 
     val nameRu: String?,
-    val nameEn: Any? = null,
+    val nameEn: String?,
     val nameOriginal: String?,
-    val countryDomains: List<CountryUI>,
-    val genreDomains: List<GenreUI>,
+    val countryDomains: List<CountryUI>?,
+    val genreDomains: List<GenreUI>?,
     val ratingKinopoisk: Double?,
     val ratingImdb: Double?,
     val year: Long?,

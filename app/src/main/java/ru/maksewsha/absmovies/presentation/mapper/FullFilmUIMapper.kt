@@ -48,10 +48,10 @@ class FullFilmUIMapper: EntityMapper<FilmDomain, FilmUI> {
             objectToMap.data.type,
             objectToMap.data.ratingMPAA,
             objectToMap.data.ratingAgeLimits,
-            objectToMap.data.countryDomains.map{
+            objectToMap.data.countryDomains?.map{
                 CountryUI(it.country)
             },
-            objectToMap.data.genreDomains.map{
+            objectToMap.data.genreDomains?.map{
                 GenreUI(it.genre)
             },
             objectToMap.data.startYear,

@@ -18,10 +18,10 @@ class FilterFilmDataMapper: EntityMapper<FilmDomainFilters, FilmDataFilters> {
                     ent.nameRu,
                     ent.nameEn,
                     ent.nameOriginal,
-                    ent.countries.map {
+                    ent.countries?.map {
                         CountryDomain(it.country)
                     },
-                    ent.genres.map{
+                    ent.genres?.map{
                         GenreDomain(it.genre)
                     },
                     ent.ratingKinopoisk,
