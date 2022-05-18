@@ -43,7 +43,7 @@
 
             <TextView
                 android:id="@+id/card_list_country_year"
-                android:layout_width="200dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:shadowColor="@color/black"
@@ -72,20 +72,20 @@
 
             <TextView
                 android:id="@+id/card_list_rating"
-                android:layout_width="50dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="right"
+                android:layout_marginEnd="4dp"
+                android:gravity="end"
                 android:textSize="@dimen/middle_text"
                 android:shadowColor="@color/black"
                 android:shadowDx="1"
                 android:shadowDy="1"
                 android:shadowRadius="1"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/card_list_country_year"
-                app:layout_constraintTop_toTopOf="@+id/card_list_country_year"
-                app:layout_constraintBottom_toBottomOf="@id/card_list_country_year"
-                tools:text="Rate"
-                tools:textColor="@color/rating_yellow" />
+                app:layout_constraintTop_toBottomOf="@+id/card_list_entitle_rutitle"
+                app:layout_constraintBottom_toTopOf="@id/card_list_genre_type"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Rate"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

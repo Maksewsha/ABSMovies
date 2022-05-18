@@ -15,9 +15,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import ru.maksewsha.absmovies.R
 import ru.maksewsha.absmovies.databinding.ActivityMainBinding
-import ru.maksewsha.absmovies.presentation.fragments.RegistrationFragment
-import ru.maksewsha.absmovies.presentation.fragments.SearchFragment
-import ru.maksewsha.absmovies.presentation.fragments.StartFragment
+import ru.maksewsha.absmovies.presentation.fragments.*
 import ru.maksewsha.absmovies.presentation.viewmodelfactories.SearchViewModelFactory
 import ru.maksewsha.absmovies.presentation.viewmodels.SearchViewModel
 
@@ -25,35 +23,59 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var viewBinding: ActivityMainBinding
     private lateinit var bottomNav: BottomNavigationView
-    private var backCount = 0
 
     private lateinit var searchViewModel: SearchViewModel
+
+    private var selectedItemBottomNav = R.id.app_menu_btn_search
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
 
-        searchViewModel = ViewModelProvider(this, SearchViewModelFactory())[SearchViewModel::class.java]
-
         bottomNav = viewBinding.appBottomNav
-//        bottomNav.setOnItemSelectedListener {
-//            when(it.itemId){
-//                R.id.app_menu_btn_search -> {
-//                    if (supportFragmentManager.findFragmentById(R.id.fragment))
-//                }
-//                R.id.app_menu_btn_favorite -> {
-//
-//                }
-//                R.id.app_menu_btn_settings -> {
-//
-//                }
-//            }
-//        }
 
-        //bottomNav.visibility = View.INVISIBLE
+        searchViewModel =
+            ViewModelProvider(this, SearchViewModelFactory())[SearchViewModel::class.java]
+
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, SearchFragment(), "SearchFragment")
+            .replace(R.id.fragment_container, StartFragment(), "StartFragment")
             .commit()
+        bottomNav.visibility = View.INVISIBLE
+
+        bottomNav.setOnItemSelectedListener {
+            selectedItemBottomNav = it.itemId
+            when (it.itemId) {
+                R.id.app_menu_btn_search -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, SearchFragment(), "SearchFragment")
+                        .addToBackStack("SearchFragment")
+                        .commit()
+                    true
+                }
+                R.id.app_menu_btn_favorite -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, FavoriteFragment(), "FavoriteFragment")
+                        .addToBackStack("FavoriteFragment")
+                        .commit()
+                    true
+                }
+                R.id.app_menu_btn_settings -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, SettingsFragment(), "SettingsFragment")
+                        .addToBackStack("SettingsFragment")
+                        .commit()
+                    true
+                }
+                else -> {
+                    true
+                }
+            }
+        }
+
+
+//        supportFragmentManager.beginTransaction()
+//            .replace(R.id.fragment_container, SearchFragment(), "SearchFragment")
+//            .commit()
     }
 }

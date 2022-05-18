@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.res.Resources
 import android.os.Bundle
 import android.util.Log
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
@@ -44,43 +46,44 @@ class FilmSearchRecycler(private val films: List<FilmUIFiltersFull>) :
 
     override fun onBindViewHolder(holder: FilmSearchViewHolder, position: Int) {
         val context = holder.itemView.context
+        val item = films.get(position)
 
-        val viewModel =
-            ViewModelProvider((context as AppCompatActivity)).get(SearchViewModel::class.java)
+        //val viewModel =
+        // ViewModelProvider((context as AppCompatActivity)).get(SearchViewModel::class.java)
 
-        holder.title.text = if (films.get(position).nameRu != null) {
-            "${films.get(position).nameOriginal} - ${films.get(position).nameRu}"
+        holder.title.text = if (item.nameRu != null) {
+            "${item.nameOriginal} - ${item.nameRu}"
         } else {
-            films.get(position).nameOriginal
+            item.nameOriginal
         }
 
 
-        val rate = films.get(position).ratingImdb
+        val rate = item.ratingImdb
         if (rate == null){
-            holder.rating.textSize = holder.itemView.context.resources.getDimension(R.dimen.small_text)
+            holder.rating.setTextSize(TypedValue.COMPLEX_UNIT_SP, context.resources.getDimension(R.dimen.middle_text).toFloat())
             holder.rating.text = holder.itemView.context.getString(R.string.rating_null)
+            holder.rating.setTextColor(ContextCompat.getColor(context, R.color.rating_red))
         } else {
-            holder.rating.text = films.get(position).ratingImdb.toString()
+            holder.rating.text = item.ratingImdb.toString()
             when(rate){
-                in 0.0 .. 4.0 -> holder.rating.setTextColor(context.resources.getColor(R.color.rating_red)) //TODO
+                in 0.0 .. 4.0 -> holder.rating.setTextColor(ContextCompat.getColor(context, R.color.rating_red))
+                in 4.1 .. 8.0 -> holder.rating.setTextColor(ContextCompat.getColor(context, R.color.rating_yellow))
+                in 8.1 .. 10.0 -> holder.rating.setTextColor(ContextCompat.getColor(context, R.color.rating_green))
+                else -> {}
             }
         }
 
         holder.countryYear.text =
-            "${getStringList(films.get(position).countryDomains ?: listOf(""))}, ${
-                films.get(
-                    position
-                ).year ?: ""
-            }"
+            "${getStringList(item.countryDomains ?: listOf(""))}" + if (item.year == null) "" else ", ${item.year}"
 
         holder.genreType.text =
-            "${getStringList(films.get(position).genreDomains ?: listOf(""))}, ${
+            "${getStringList(item.genreDomains ?: listOf(""))}, ${
                 FilmTypesEngRus.valueOf(
-                    films.get(position).type.toString()
+                    item.type.toString()
                 ).rusText.lowercase()
             }"
 
-        Glide.with(context).load(films.get(position).posterURLPreview)
+        Glide.with(context).load(item.posterURLPreview)
             .override(250, 375)
             .centerInside()
             .into(holder.image)
@@ -88,7 +91,7 @@ class FilmSearchRecycler(private val films: List<FilmUIFiltersFull>) :
         holder.cardItem.setOnClickListener {
             val fragmentToShow = FilmFullFragment()
             val bundle = Bundle()
-            bundle.putLong("filmId", films.get(position).kinopoiskID)
+            bundle.putLong("filmId", item.kinopoiskID)
             fragmentToShow.arguments = bundle
             (context as AppCompatActivity).supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, fragmentToShow, "FilmFullFragment")
