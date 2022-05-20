@@ -38,10 +38,10 @@ class MainActivity : AppCompatActivity() {
         searchViewModel =
             ViewModelProvider(this, SearchViewModelFactory())[SearchViewModel::class.java]
 
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, StartFragment(), "StartFragment")
-            .commit()
-        bottomNav.visibility = View.INVISIBLE
+//        supportFragmentManager.beginTransaction()
+//            .replace(R.id.fragment_container, StartFragment(), "StartFragment")
+//            .commit()
+//        bottomNav.visibility = View.INVISIBLE
 
         bottomNav.setOnItemSelectedListener {
             selectedItemBottomNav = it.itemId
@@ -74,8 +74,8 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-//        supportFragmentManager.beginTransaction()
-//            .replace(R.id.fragment_container, SearchFragment(), "SearchFragment")
-//            .commit()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, SearchFragment(), "SearchFragment")
+            .commit()
     }
 }

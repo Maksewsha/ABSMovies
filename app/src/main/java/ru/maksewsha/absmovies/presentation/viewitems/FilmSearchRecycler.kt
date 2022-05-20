@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import ru.maksewsha.absmovies.R
 import ru.maksewsha.absmovies.presentation.fragments.FilmFullFragment
 import ru.maksewsha.absmovies.presentation.fragments.SearchFragment
@@ -83,9 +84,9 @@ class FilmSearchRecycler(private val films: List<FilmUIFiltersFull>) :
                 ).rusText.lowercase()
             }"
 
-        Glide.with(context).load(item.posterURLPreview)
-            .override(250, 375)
-            .centerInside()
+        Glide.with(context)
+            .load(item.posterURLPreview)
+            .override(100, 150)
             .into(holder.image)
 
         holder.cardItem.setOnClickListener {

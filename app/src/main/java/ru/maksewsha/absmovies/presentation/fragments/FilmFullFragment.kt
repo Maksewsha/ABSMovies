@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import com.bumptech.glide.Glide
 import ru.maksewsha.absmovies.R
 import ru.maksewsha.absmovies.databinding.FragmentFilmFullBinding
 import ru.maksewsha.absmovies.presentation.models.FilmUIFull
@@ -47,7 +48,15 @@ class FilmFullFragment(): Fragment(R.layout.fragment_film_full) {
 
         viewModel.fullFilm.observe(viewLifecycleOwner, object: Observer<FilmUIFull>{
             override fun onChanged(t: FilmUIFull?) {
-                binding.title.text = t!!.nameOriginal
+                val film = t!!
+                binding.title.text = "${film.nameOriginal}(${film.year})"
+                binding.rutitle.text = film.nameRu ?: ""
+                binding.shortDescription.text = film.description
+                binding.filmUrl.text = "${binding.filmUrl.text}${film.webURL}"
+
+                Glide.with(requireContext())
+                    .load(film.posterURL)
+                    .into(binding.image)
             }
         })
 
