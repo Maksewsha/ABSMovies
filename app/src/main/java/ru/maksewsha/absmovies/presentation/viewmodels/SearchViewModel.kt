@@ -63,4 +63,5 @@ class SearchViewModel(private val getByKeyWordCase: GetByKeyWordCase, private va
             }
         }
     }
+
 }

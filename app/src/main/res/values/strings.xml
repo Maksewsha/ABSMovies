@@ -13,4 +13,5 @@
     <string name="key_words">Key words</string>
     <string name="rating_null">-</string>
     <string name="url_for_film">Ссылка на фильм:</string>
+    <string name="votes_count">Кол-во голосов:</string>
 </resources>

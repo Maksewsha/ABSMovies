@@ -25,6 +25,7 @@ import ru.maksewsha.absmovies.presentation.fragments.SearchFragment
 import ru.maksewsha.absmovies.presentation.models.FilmUIFiltersFull
 import ru.maksewsha.absmovies.presentation.utils.FilmTypesEngRus
 import ru.maksewsha.absmovies.presentation.utils.getStringList
+import ru.maksewsha.absmovies.presentation.utils.setRateColor
 import ru.maksewsha.absmovies.presentation.viewmodels.SearchViewModel
 
 class FilmSearchRecycler(private val films: List<FilmUIFiltersFull>) :
@@ -59,20 +60,7 @@ class FilmSearchRecycler(private val films: List<FilmUIFiltersFull>) :
         }
 
 
-        val rate = item.ratingImdb
-        if (rate == null){
-            holder.rating.setTextSize(TypedValue.COMPLEX_UNIT_SP, context.resources.getDimension(R.dimen.middle_text).toFloat())
-            holder.rating.text = holder.itemView.context.getString(R.string.rating_null)
-            holder.rating.setTextColor(ContextCompat.getColor(context, R.color.rating_red))
-        } else {
-            holder.rating.text = item.ratingImdb.toString()
-            when(rate){
-                in 0.0 .. 4.0 -> holder.rating.setTextColor(ContextCompat.getColor(context, R.color.rating_red))
-                in 4.1 .. 8.0 -> holder.rating.setTextColor(ContextCompat.getColor(context, R.color.rating_yellow))
-                in 8.1 .. 10.0 -> holder.rating.setTextColor(ContextCompat.getColor(context, R.color.rating_green))
-                else -> {}
-            }
-        }
+        setRateColor(item.ratingImdb, holder.rating)
 
         holder.countryYear.text =
             "${getStringList(item.countryDomains ?: listOf(""))}" + if (item.year == null) "" else ", ${item.year}"
